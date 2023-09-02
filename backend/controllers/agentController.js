@@ -70,7 +70,7 @@ exports.updateTours = async (req, res) => {
     });
   }
 };
-exports.deleteTour = async (req, res) => {
+exports.deleteAgent = async (req, res) => {
   try {
     const agent = await Agent.findByIdAndDelete(req.params.id);
     res.status(200).json({

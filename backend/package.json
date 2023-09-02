@@ -1,0 +1,17 @@
+{
+  "name": "valorant-agent-app",
+  "version": "1.0.0",
+  "description": "view the all details of agent",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "harsh singh",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0"
+  }
+}

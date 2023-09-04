@@ -1,14 +1,34 @@
 const app = require("../app");
 const Agent = require("./../models/agentModel");
+const APIFeatures = require("./../utils/apiFeatures");
 
-exports.getAllAgents = async (req, res) => {
+exports.getAllAgents = async (req, res, next) => {
   try {
-    const agent = await Agent.find();
+    const agents = await Agent.find();
     res.status(200).json({
       status: "sucess",
-      length: agent.length,
-      data: agent,
+      length: agents.length,
+      data: agents,
     });
+  } catch (error) {
+    res.status(404).json({
+      status: "fail",
+      message: error,
+    });
+  }
+};
+
+exports.getGroupAgents = async (req, res, next) => {
+  try {
+    res.send("I  am in");
+    // console.log("I am in group");
+    // const query = req.query;
+    // const agent = await Agent.find({ roles: req.query });
+
+    // res.status(200).json({
+    //   status: "success",
+    //   data: agent,
+    // });
   } catch (error) {
     res.status(404).json({
       status: "fail",

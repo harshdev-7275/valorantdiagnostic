@@ -13,5 +13,6 @@ router
   .get(agentController.getAgent)
   .patch(agentController.updateTours)
   .delete(agentController.deleteAgent);
+router.route("/roles").get(agentController.getGroupAgents);
 
 module.exports = router;
